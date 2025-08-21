@@ -49,7 +49,7 @@ export default function HomePage() {
     );
   }
 
-  // Se l'utente è loggato, mostra il benvenuto personalizzato e il pulsante Logout
+  // Se l'utente è loggato, mostra il benvenuto personalizzato e i pulsanti
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
       <div className="text-center">
@@ -59,13 +59,19 @@ export default function HomePage() {
         <p className="mt-6 text-lg leading-8 text-gray-600">
           Sei pronto per iniziare a tracciare i tuoi pasti?
         </p>
-        <div className="mt-10">
-          <button
-            onClick={handleLogout}
-            className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-          >
-            Logout
-          </button>
+        <div className="mt-10 flex items-center justify-center gap-x-6">
+            <button
+                onClick={() => router.push('/dashboard')}
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+            >
+                Vai alla Dashboard
+            </button>
+            <button
+                onClick={handleLogout}
+                className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500"
+            >
+                Logout
+            </button>
         </div>
       </div>
     </main>
