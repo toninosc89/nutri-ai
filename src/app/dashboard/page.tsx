@@ -102,4 +102,34 @@ export default function DashboardPage() {
           <h2 className="text-xl font-semibold text-gray-800">Aggiungi un nuovo pasto</h2>
           <form onSubmit={handleAddMeal} className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
             <input name="name" value={newMeal.name} onChange={handleInputChange} placeholder="Nome (es. Mela)" className="lg:col-span-2 block w-full rounded-md border-gray-300 shadow-sm" required />
-            <input name="calories" type="number" value={newMeal.calories} onChange={handleInputChange} placeholder="Cal
+            <input name="calories" type="number" value={newMeal.calories} onChange={handleInputChange} placeholder="Calorie" className="block w-full rounded-md border-gray-300 shadow-sm" required />
+            <input name="protein" type="number" value={newMeal.protein} onChange={handleInputChange} placeholder="Proteine (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
+            <input name="carbs" type="number" value={newMeal.carbs} onChange={handleInputChange} placeholder="Carboidrati (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
+            <input name="fats" type="number" value={newMeal.fats} onChange={handleInputChange} placeholder="Grassi (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
+            <button type="submit" className="sm:col-span-2 lg:col-span-5 w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-indigo-500">Aggiungi Pasto</button>
+          </form>
+        </div>
+
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-gray-800">Pasti di Oggi</h2>
+          <div className="mt-4 space-y-4">
+            {meals.length > 0 ? (
+              meals.map((meal) => (
+                <div key={meal.id} className="bg-white p-4 rounded-lg shadow-sm flex justify-between items-center">
+                  <div>
+                    <p className="font-bold text-gray-800">{meal.name}</p>
+                    <p className="text-sm text-gray-500">
+                      {meal.calories} kcal &bull; P: {meal.protein}g &bull; C: {meal.carbs}g &bull; F: {meal.fats}g
+                    </p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="bg-white p-4 rounded-lg shadow-sm text-center text-gray-500"><p>Nessun pasto registrato.</p></div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
