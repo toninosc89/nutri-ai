@@ -169,7 +169,7 @@ export default function DashboardPage() {
               <input name="protein" type="number" value={newMeal.protein} onChange={handleInputChange} placeholder="Proteine (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
               <input name="carbs" type="number" value={newMeal.carbs} onChange={handleInputChange} placeholder="Carboidrati (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
               <input name="fats" type="number" value={newMeal.fats} onChange={handleInputChange} placeholder="Grassi (g)" className="block w-full rounded-md border-gray-300 shadow-sm" />
-              <button type="submit" className="sm:col-span-2 lg:col-span-5 w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-indigo-500">Aggiungi Pasto</-button>
+              <button type="submit" className="sm:col-span-2 lg:col-span-5 w-full rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-indigo-500">Aggiungi Pasto</button>
             </form>
           </div>
         </div>
